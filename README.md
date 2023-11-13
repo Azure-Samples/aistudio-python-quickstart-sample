@@ -1,57 +1,49 @@
-# Project Name
+# Azure AI Studio: Python Quickstart Sample
 
-(short, 1-3 sentenced, description of the project)
+This is the basic quickstart tutorial for the Azure AI SDK (Python). You can also find framework-specific quickstarts here:
+ - [Azure AI Studio: Semantic Kernel Quickstart](https://github.com/Azure-Samples/aistudio-python-semantickernel-sample)
+ - [Azure AI Studio: PromptFlow Quickstart](https://github.com/Azure-Samples/aistudio-python-promptflow-sample)
+ - [Azure AI Studio: LangChain Quickstart](https://github.com/Azure-Samples/aistudio-python-langchain-sample)
 
 ## Features
 
-This project framework provides the following features:
+> [!WARNING]  
+> Features contained in this repository are in private preview. Preview versions are provided without a service level agreement, and they are not recommended for production workloads. Certain features might not be supported or might have constrained capabilities. For more information, see [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-* Feature 1
-* Feature 2
-* ...
+The sample showcases these features in the [Azure AI Studio preview](https://aka.ms/azureai/docs):
 
-## Getting Started
+* [Azure AI Studio](https://aka.ms/azureaistudio/docs) - web UI an end-to-end developer experience in building, evaluating, and deploying, your AI solutions.
+* [Azure AI Services](https://learn.microsoft.com/azure/ai-services/what-are-ai-services) - collection of AI services (with pre-built and customizable APIs & models) usable in Azure AI Studio.
+* [Azure AI SDK](https://learn.microsoft.com/azure/ai-studio/how-to/sdk-install?) - for programmatic access to Azure AI Services.
+* [Azure AI CLI](https://learn.microsoft.com/azure/ai-studio/how-to/cli-install) - for command-line access to Azure AI Services.
 
-### Prerequisites
+## Goal: Build a copilot with your own data
 
-(ideally very short, if any)
+Learn to build your own copilot using the Azure AI Studio with core resources (Azure AI Services) and tools (Azure AI SDK, Azure AI CLI). The tutorial guides you through the following steps:
 
-- OS
-- Library version
-- ...
+1. Setup and validate your development environment.
+2. Create an Azure AI project and AI resources for your copilot.
+3. Create an Azure AI search index for your custom data.
+4. Validate copilot by asking a question about your custom data.
+5. Evaluate the performance of your copilot implementation.
+6. (Optional) Deploy the copilot to Azure and invoke it.
 
-### Installation
+## Pre-Requisites
 
-(ideally very short)
+1. Azure account with active subscription.
+2. GitHub account with access to GitHub Codespaces.
+3. (Optional) Set of docs that represent "your custom data".
 
-- npm install [package name]
-- mvn install
-- ...
+Ensure that you have [access to the Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/faq#how-can-customers-access-azure-ai-studio--) in your region, and can access related resources in your subscription. Refer to the [Azure AI Studio FAQ](https://learn.microsoft.com/en-us/azure/ai-studio/faq#how-can-customers-access-azure-ai-studio--) for more details on regional availability, pricing and more.
 
-### Quickstart
-(Add steps to get up and running quickly)
+## Get Started
 
-1. git clone [repository clone url]
-2. cd [repository name]
-3. ...
+Ready to get started building a copilot with your own custom data? [Begin the tutorial](docs/step-01.md) by setting up your development environment  - and continue from there.
 
+## Related Resources
 
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+1. [Azure AI Studio](https://aka.ms/azureaistudio) - UI to explore, build & manage AI solutions.
+1. [Azure AI Studio Docs](https://aka.ms/azureaistudio/docs) - Azure AI Studio documentation.
+1. [Azure AI Services](https://learn.microsoft.com/azure/ai-services/what-are-ai-services) - Azure AI Services documentation.
+1. [Training: Using vector search in Azure Cognitive Search](https://learn.microsoft.com/training/modules/improve-search-results-vector-search) 
+1. [Tutorial: Deploy a web app for chat on your data](https://learn.microsoft.com/azure/ai-studio/tutorials/deploy-chat-web-app) 
