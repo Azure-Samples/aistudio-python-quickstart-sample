@@ -27,3 +27,10 @@ You can also use the `ai` CLI to submit a single question and/or chat interactiv
 ai chat --interactive # uses default "chat with your data" copilot
 ai chat --interactive --function src/copilot_aisdk/chat:chat_completion
 ```
+
+
+## Next Steps
+
+We've created a simple copilot solution for our custom data, and validated its usage with a sample question. Now, we need to evaluate how it performs in comparison to other applications like `chatgpt` by using a relevant evaluation dataset.
+
+➡️ [**Step 05**: Evaluate the copilot performance](./step-05.md)

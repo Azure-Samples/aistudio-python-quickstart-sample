@@ -11,3 +11,10 @@ ai init
 - This will generate a config.json file in the root of the repo, the SDK will use this when authenticating to Azure AI services.
 
 Note: You can open your project in [AI Studio](https://aka.ms/AzureAIStudio) to view your projects configuration and components (generated indexes, evaluation runs, and endpoints)
+
+
+## Next Steps
+
+Our Azure AI project is ready, with the relevant Azure AI resources created and provisioned on Azure. Now, it's time to build the information retrieval component for our custom data sources, starting with building the Search index needed for our Retrieval Augmented Generation approach.
+
+➡️ [**Step 03**: Build the Azure AI Search Index](./step-03.md)

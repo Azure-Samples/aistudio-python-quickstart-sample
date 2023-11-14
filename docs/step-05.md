@@ -19,3 +19,9 @@ You can also use the `ai` CLI to do bulk runs and evaluations:
 ai chat evaluate --input-data src/test/evaluation_dataset.jsonl # uses default "chat with your data" copilot
 ai chat evaluate --input-data src/test/evaluation_dataset.jsonl --function src/copilot_aisdk/chat:chat_completion
 ```
+
+## Next Steps
+
+We've tested out the copilot solution with the Azure AI CLI (using 'ai chat') and the Azure AI SDK (using'ChatCompletion API'). Now it's time to deploy the solution to Azure, making it available as a service endpoint that users and applications can interact with, to query your custom data. 
+
+➡️ [**Step 06**: Deploy the copilot to Azure](./step-06.md)

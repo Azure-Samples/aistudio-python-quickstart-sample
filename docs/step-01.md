@@ -17,3 +17,10 @@ curl -sL https://aka.ms/InstallAzureAICLIDeb | sudo bash
 ```
 
 To install the CLI on Windows and MacOS, follow the instructions [here](https://github.com/Azure/azureai-insiders/blob/main/previews/aistudio/how-to/use_azureai_sdk.md#install-the-cli)v
+
+
+## Next Steps
+
+We've setup and validated our development environment. Now it's time to create our Azure AI project and provision the necessary resources to build our copilot solution.
+
+➡️ [**Step 02**: Initialize Azure AI Resources](./step-02.md)

@@ -192,6 +192,7 @@ if __name__ == "__main__":
     # configure asyncio
     import asyncio
     import platform
+    from aisdk.chat import chat_completion
 
     # workaround for a bug on windows
     if platform.system() == 'Windows':
@@ -202,7 +203,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--question", help="The question to ask the copilot", type=str)
-    parser.add_argument("--implementation", help="The implementation to use", default="aisdk", type=str)
+    #parser.add_argument("--implementation", help="The implementation to use", default="aisdk", type=str)
     parser.add_argument("--deploy", help="Deploy copilot", action='store_true')
     parser.add_argument("--evaluate", help="Evaluate copilot", action='store_true')
     parser.add_argument("--dataset-path", help="Test dataset to use with evaluation",
@@ -213,29 +214,8 @@ if __name__ == "__main__":
     parser.add_argument("--invoke-deployment", help="Invoke a deployment and print out response", action="store_true")
     args = parser.parse_args()
 
-    check_local_index = False
-    if args.implementation:
-        if args.implementation == "promptflow":
-            from copilot_promptflow.chat import chat_completion
-
-            deployment_folder = "copilot_promptflow"
-            chat_module = "copilot_promptflow.chat"
-        elif args.implementation == "semantickernel":
-            from copilot_semantickernel.chat import chat_completion
-
-            deployment_folder = "copilot_semantickernel"
-            chat_module = "copilot_semantickernel.chat"
-        elif args.implementation == "langchain":
-            from copilot_langchain.chat import chat_completion
-
-            deployment_folder = "copilot_langchain"
-            chat_module = "copilot_langchain.chat"
-            check_local_index = True
-        elif args.implementation == "aisdk":
-            from copilot_aisdk.chat import chat_completion
-
-            deployment_folder = "copilot_aisdk"
-            chat_module = "copilot_aisdk.chat"
+    deployment_folder = "aisdk"
+    chat_module = "aisdk.chat"
 
     if args.build_index:
         build_cogsearch_index(os.getenv("AZURE_AI_SEARCH_INDEX_NAME"), "./data/3-product-info")
@@ -259,14 +239,6 @@ if __name__ == "__main__":
 
         # Prepare for the search index
         search_index_folder = os.getenv("AZURE_AI_SEARCH_INDEX_NAME") + "-mlindex"
-        if check_local_index and not os.path.exists(search_index_folder):
-            client = AIClient.from_config(DefaultAzureCredential())
-            try:
-                client.indexes.download(name=os.getenv("AZURE_AI_SEARCH_INDEX_NAME"),
-                                          download_path=search_index_folder, label="latest")
-            except:
-                print("Please build the search index with 'python src/run.py --build-index'")
-                sys.exit(1)
 
         # Call the async chat function with a single question and print the response
         if args.stream:

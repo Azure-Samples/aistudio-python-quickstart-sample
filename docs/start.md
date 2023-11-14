@@ -1,95 +1,59 @@
-## Getting Started
+# Build a copilot with Azure AI Studio and your data
 
-### Prerequisites
+> [!IMPORTANT]
+> **❗Features contained in this repository are in private preview.** These preview features are provided without a service-level agreement, and are not recommended for production workloads. Certain features might not be supported or might have constrained capabilities. 
+> For more information, see [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-(ideally very short, if any)
+Learn how you can use the Azure AI Studio, SDK and CLI, with Azure AI Services, to build your own copilot application, with your custom data.
 
-- OS
-- Library version
-- ...
+## Learning Objectives
 
-### Installation
+By the end of this tutorial you'll learn how to:
+ - Setup your development environment for building Azure AI Solutions
+ - Create an Azure AI Project and related resources for your copilot
+ - Create an Azure AI Search resource and index for your custom data
+ - Validate your copilot by asking it questions about your custom data
+ - Evaluate your copilot performance using a relevant test dataset
+ - Explore, build, and manage, your AI Project resources from Azure AI Studio
 
-(ideally very short)
+## Introduction
 
-- npm install [package name]
-- mvn install
-- ...
+This tutorial walks you through the steps to build, use, and evaluate, a copilot implementation on a custom data collection, **using Azure AI Studio** and the associated CLI, SDK and Azure AI Services. Before we dive in, let's talk about some of the core terms and concepts we will be using.
 
-### Quickstart
-(Add steps to get up and running quickly)
+### What is Azure AI Studio?
 
-1. git clone [repository clone url]
-2. cd [repository name]
-3. ...
+[Azure AI Studio](https://aka.ms/azureaistudio) is a trusted platform that provides a simplfied developer experience for exploring, building, testing and deploying AI solutions that are also grounded in responsible AI practices. 
+ - Manage your Azure AI project directly from the **Azure AI Studio UI**
+ - Interact with the project programmatically, using the **Azure AI SDK**
+ - Interact with the project from the commandline, using the **Azure AI CLI**
 
-
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+With the Azure AI Studio, you get a centralized space for discovering and managing your Azure AI resources, with tools and AI Service integrations for seamless end-to-end development.
 
 
+### What is a copilot?
+
+A "copilot" is an application that uses modern AI and large language models (LLM) to assist you in completing complex cognitive tasks. In this particular series of tutorials, we focus on building a copilot that assists you in answering user questions _about your own data_, by using [Retrieval Augmented Generation (RAG)](https://learn.microsoft.com/azure/ai-studio/concepts/retrieval-augmented-generation) in conjunction with your preferred LLM endpoint.
+
+### What is Retrieval Augmented Generation (RAG)?
+
+[Retrieval Augmented Generation (RAG)](https://learn.microsoft.com/azure/search/retrieval-augmented-generation-overview) is an architecture or pattern where you _augment_ the capability of the default Large Language Model (LLM) by adding an _information retrieval system_ that gives you more control over the data used by the LLM in generating responses. When a user asks a "question", the copilot can retrieve matching results from this system and combine it with the question to form the prompt provided to the LLM, to generate the final answer.
+
+### What is Azure AI Search? 
+
+[Azure AI Search](https://learn.microsoft.com/azure/search/search-what-is-azure-search) (formerly called _Azure Cognitive Search_) is a cloud-based search service that provides tools, APIs and infrastructure to **support information retrieval at scale** over private, heterogeneous data sources - with applicability to traditional and conversational search solutions. It is a [proven solution for information retrieval in a RAG architecture](https://github.com/Azure-Samples/azure-search-openai-demo) and can be easily created and managed from the Azure AI Studio UI - or programmatically, using Azure AI SDK or CLI. We'll make good use of this capability in our tutorial, to develop our copilot solution.
 
 
-## What is a copilot?
+## Learning Resources
 
-A copilot is an application that uses modern AI and large language models (LLM) to assist you in completing complex cognitive tasks. In this tutorial, you'll learn to build a copilot that can help you answer user questions about _your own data_ using the popular [Retrieval Augmented Generation (RAG) pattern](https://learn.microsoft.com/azure/ai-studio/concepts/retrieval-augmented-generation).
-
-## What is Retrieval Augmented Generation (RAG)?
-
-Retrieval Augmented Generation (RAG) is an architecture or pattern that _augments_ the capabilities of the default Large Language Model (LLM) by adding an information retrieval system which [gives you control over the data used by the LLM](https://learn.microsoft.com/azure/search/retrieval-augmented-generation-overview) when it generates responses to user questions. 
-
-Now when the user asks a question, the copilot can _retrieve_ relevant search results from that information rtr
-
-## What is Azure Cognitive Search?
-A good inforrmation retrieval system provides **index and search** capabilities that work with your custom data.
-
-## What does our copilot do?
+1. [Azure AI Studio](https://aka.ms/azureaistudio) - UI to explore, build & manage AI solutions.
+1. [Azure AI Studio Docs](https://aka.ms/azureaistudio/docs) - Azure AI Studio documentation.
+1. [Azure AI Services](https://learn.microsoft.com/azure/ai-services/what-are-ai-services) - Azure AI Services documentation.
+1. [Training: Using vector search in Azure Cognitive Search](https://learn.microsoft.com/training/modules/improve-search-results-vector-search) 
+1. [Tutorial: Deploy a web app for chat on your data](https://learn.microsoft.com/azure/ai-studio/tutorials/deploy-chat-web-app) 
 
 
+## Next Steps
 
+To build our copilot solution, we first need to setup our development environment with the right tools, libraries and content (e.g., custom data sources) to work with Azure and Azure AI resources.
 
-A good information retrieval system will provide efficient **index and search** capabilities that work with _your custom data_. Now, when the user asks your copilot a question, it searches the information retrieval system using that input, to get a relevant set of matching results. The original question and the retrieved matching results are now combined in the prompt sent to the target LLM, to generate the desired answer.
-
-Azure Cognitive Search is a [proven solution for information retrieval in a RAG architecture](https://github.com/Azure-Samples/azure-search-openai-demo) that we will use in our solution as well.
-
-
-
-## 1. Setup Your Development Environment.
-
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure/aistudio-copilot-sample/tree/oct-refresh?quickstart=1)
-
-
-Learn how to **create, build, evaluate, and deploy, a copilot solution** using the Azure AI Studio SDK and CLI wih custom Python code (run from the command-line or from a Jupyter notebook).
-
-## Getting started 
-**What you will learn:**
-- What is Azure AI Studio?
-- What is the Azure AI SDK?
-- What is the Azure AI CLI?
-- How do I build a copilot with Azure AI Studio?
-
-**What you will do:**
-- Setup dev environment (with Azure AI CLI & SDK)
-- Create an Azure AI project & resources for a copilot
-- Build an Azure AI search index using custom data
-- Ask the copilot a sample question (related to data)
-- Evaluate performance of the copilot implementation
-
+➡️ [**Step 01**: Setup Dev Environment](./step-01.md)
