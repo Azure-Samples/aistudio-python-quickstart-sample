@@ -16,12 +16,14 @@ import platform
 import json
 import pathlib
 import pandas as pd
+import shutil
 
 from azure.ai.resources.client import AIClient
 from azure.ai.resources.entities.models import Model
 from azure.ai.resources.entities.deployment import Deployment
 from azure.identity import DefaultAzureCredential
 
+source_path = "./src"
 
 # build the index using the product catalog docs from data/3-product-info
 def build_cogsearch_index(index_name, path_to_data):
@@ -118,15 +120,28 @@ def run_evaluation(chat_completion_fn, name, dataset_path):
 
     return result, tabular_result
 
+def prepare_search_index(deployment_folder: str):
+    client = AIClient.from_config(DefaultAzureCredential())
+    search_index_name = os.getenv("AZURE_AI_SEARCH_INDEX_NAME")
+    search_index_folder = (search_index_name if search_index_name else "") + "-mlindex"
+    search_index_path = os.path.join(source_path, deployment_folder, search_index_folder)
+    if not os.path.exists(search_index_path):
+        try:
+            client.indexes.download(name=os.getenv("AZURE_AI_SEARCH_INDEX_NAME"),
+                                        download_path=search_index_path, label="latest")
+        except:
+            print("Please build the search index with 'python src/run.py --build-index'")
+            sys.exit(1)
 
 def deploy_flow(deployment_name, deployment_folder, chat_module):
     client = AIClient.from_config(DefaultAzureCredential())
+
     if not deployment_name:
         deployment_name = f"{client.project_name}-copilot"
     deployment = Deployment(
         name=deployment_name,
         model=Model(
-            path="./src",
+            path=source_path,
             conda_file=f"{deployment_folder}/conda.yaml",
             chat_module=chat_module,
         ),
@@ -192,7 +207,6 @@ if __name__ == "__main__":
     # configure asyncio
     import asyncio
     import platform
-    from aisdk.chat import chat_completion
 
     # workaround for a bug on windows
     if platform.system() == 'Windows':
@@ -203,7 +217,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--question", help="The question to ask the copilot", type=str)
-    #parser.add_argument("--implementation", help="The implementation to use", default="aisdk", type=str)
+    parser.add_argument("--implementation", help="The implementation to use", default="aisdk", type=str)
     parser.add_argument("--deploy", help="Deploy copilot", action='store_true')
     parser.add_argument("--evaluate", help="Evaluate copilot", action='store_true')
     parser.add_argument("--dataset-path", help="Test dataset to use with evaluation",
@@ -214,8 +228,30 @@ if __name__ == "__main__":
     parser.add_argument("--invoke-deployment", help="Invoke a deployment and print out response", action="store_true")
     args = parser.parse_args()
 
-    deployment_folder = "aisdk"
-    chat_module = "aisdk.chat"
+    if args.implementation:
+        if args.implementation == "promptflow":
+            from copilot_promptflow.chat import chat_completion
+
+            deployment_folder = "copilot_promptflow"
+            chat_module = "copilot_promptflow.chat"
+        elif args.implementation == "semantickernel":
+            from copilot_semantickernel.chat import chat_completion
+
+            deployment_folder = "copilot_semantickernel"
+            chat_module = "copilot_semantickernel.chat"
+        elif args.implementation == "langchain":
+            from copilot_langchain.chat import chat_completion
+
+            deployment_folder = "copilot_langchain"
+            chat_module = "copilot_langchain.chat"
+
+            # Only LangChain uses local search index currently
+            prepare_search_index(deployment_folder)
+        elif args.implementation == "aisdk":
+            from copilot_aisdk.chat import chat_completion
+
+            deployment_folder = "copilot_aisdk"
+            chat_module = "copilot_aisdk.chat"
 
     if args.build_index:
         build_cogsearch_index(os.getenv("AZURE_AI_SEARCH_INDEX_NAME"), "./data/3-product-info")
@@ -236,9 +272,6 @@ if __name__ == "__main__":
         question = "which tent is the most waterproof?"
         if args.question:
             question = args.question
-
-        # Prepare for the search index
-        search_index_folder = os.getenv("AZURE_AI_SEARCH_INDEX_NAME") + "-mlindex"
 
         # Call the async chat function with a single question and print the response
         if args.stream:
