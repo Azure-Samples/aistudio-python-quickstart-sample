@@ -1,10 +1,15 @@
+## 🚨 | Clean up
 
-## Additional Tips and Resources
+> [!WARNING]  
+> Once you have completed this tutorial, please remember to delete the Azure resource group and relevant resources to ensure you don't incur any unexpected charges. 
 
+Note that you may need to delete the Azure AI project resource and Azure AI service resource separately, first, before you can delete the resource group.
 
-### Follow the full tutorial
+## 💡 | Additional Tips and Resources
 
-For a more detailed tutorial using this notebook, you can follow the [Build a co-pilot using the Azure AI SDK](https://github.com/Azure/azureai-insiders/blob/aistudio-preview/previews/aistudio/tutorials/copilot_with_sdk.md) tutorial.
+### Explore the full tutorial
+
+For a more detailed tutorial on this topic, you can follow the [Build a co-pilot using the Azure AI SDK](https://github.com/Azure/azureai-insiders/blob/aistudio-preview/previews/aistudio/tutorials/copilot_with_sdk.md) tutorial.
 
 ### Customize the development container
 
