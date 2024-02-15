@@ -1,29 +1,22 @@
-## Step 1: Set up your development environment
+# 03 | Setup Dev Environment
 
-Our development environment makes use of 3 resources:
- - [Azure AI Studio](https://aka.ms/azureaistudio) - accessed via browser.
- - [Azure AI CLI](https://learn.microsoft.com/azure/ai-studio/how-to/cli-install?tabs=linux%2Cterminal) - accessed via terminal.
- - [Azure AI SDK](https://learn.microsoft.com/azure/ai-studio/how-to/sdk-install?tabs=linux) - accessed via code.
+Let's set up our development environment. 
 
-To setup your development environment, you have 3 options:
-1. **Prebuilt, with GitHub Codespaces** -  recommended approach.
+The Azure AI Studio platform is currently in preview with the Azure AI CLI and Azure AI SDK
+
+Let's set up our development environment for this tutorial. The Azure AI Studio platform components are under active development, which means the CLI and SDK dependencies will need to be updated regulary. Keep this in mind when selecting the setup option that works best for your needs. There are 3 options to choose from:
+
+1. **Prebuilt, with GitHub Codespaces** - our recommended approach.
 2. **Prebuilt, with Docker Desktop** - for local development.
 3. **Manually, on local device** - tradeoff complexity for control.
 
-> [!IMPORTANT  
-> The Azure AI Studio preview and related Azure AI SDK and Azure AI CLI are likely to evolve quickly to reflect changes and updates. We strongly recommend using the pre-built development environment options to minimize your effort required to setup and maintain your own local environment to be consistent with thesev changes.
+Pick **ONE OF THESE OPTIONS** to complete this step of the tutorial. Note that you should have created a **fork of the repository** in a prior step. These instructions apply to that forked repo.
 
-For completeness, we've documented all three options below.
+## 3.1 | Prebuilt, with GitHub Codespaces
 
----
+This is the recommended option. Minimize your setup effort and maximize your productivity by using the prebuilt [dev container](https://containers.dev) for your development environment.
 
-### Setup-1: Prebuilt, with GitHub Codespaces ✅
-
-
-> [!NOTE]  
-> This is the recommended option. Minimize your setup effort and maximize your productivity by using a prebuilt development environment.
-
-The repository is instrumented to use a [dev container](https://containers.dev) that includes all the necessary tools and packages required to build the copilot. 
+1. Navigate to your fork of this sample, in the browser.
 
 1. To get started, click the button below to launch [GitHub Codespaces](https://docs.github.com/codespaces) directly in your browser.
 

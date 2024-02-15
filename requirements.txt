@@ -1,15 +1,23 @@
 # other app dependencies
 ipykernel
 
-# generative ai SDK dependencies
-azure-ai-generative[evaluate,index,promptflow]
+# use newer version of openai
+openai>1.0 
+
+# dependencies for azure ai sdk 
+# 1. azure-ai-resources package for managing azure project resources
+azure_ai_resources @https://pkgs.dev.azure.com/azure-sdk/29ec6040-b234-4e31-b139-33dc4287b756/_packaging/3572dbf9-b5ef-433b-9137-fc4d7768e7cc/pypi/download/azure-ai-resources/1a20240207004/azure_ai_resources-1.0.0a20240207004-py3-none-any.whl
+# 2. azure-ai-generative package for managing app development workflow
+azure-ai-generative[evaluate,index,promptflow] @https://pkgs.dev.azure.com/azure-sdk/29ec6040-b234-4e31-b139-33dc4287b756/_packaging/3572dbf9-b5ef-433b-9137-fc4d7768e7cc/pypi/download/azure-ai-generative/1a20240207004/azure_ai_generative-1.0.0a20240207004-py3-none-any.whl
+
+# This is needed for promptflow (secure keys for connections)
+keyrings.alt # This is for promptflow
 
 # hardcoded the version of azureml-mlflow here for faster Docker image building speed
 azureml-mlflow==1.53.0
 pytest
 
-# langchain dependencies, these should be optional in the future
-# langchain moved Embeddings from langchain.embeddings.base to langchain.schema.embeddings while azureml-rag is still referencing it.
-# once azureml-rag fixes, we should remove the langchain reference from this file
-langchain==0.0.324
-semantic-kernel
+# removing all other framework dependencies since we are base sample
+#langchain==0.1.1
+#langchain-openai==0.0.2.post1
+#semantic-kernel

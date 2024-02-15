@@ -1,3 +1,4 @@
+# 08 | Deploy Your Copilot
 
 ## Step 6: Deploy the copilot to Azure
 

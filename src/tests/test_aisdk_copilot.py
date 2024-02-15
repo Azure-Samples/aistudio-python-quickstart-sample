@@ -24,3 +24,5 @@ def test_gpt_coherence_atleast4():
     assert(metrics_summary['mean_gpt_coherence'] >= 4)
     
     
+    
+    

@@ -1,3 +1,5 @@
+# 09 | Using Your Copilot
+
 ## 🚨 | Clean up
 
 > [!WARNING]  

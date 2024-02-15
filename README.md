@@ -1,55 +1,76 @@
-# Azure AI Studio: Python Quickstart Sample
+# Azure AI Studio: Python Quickstart Sample 
 
 > [!WARNING]  
 > **Features used in this repository are in preview. Preview versions are provided without a service level agreement, and they are not recommended for production workloads. Certain features might not be supported or might have constrained capabilities. For more information, see [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/).**
 
+## Table Of Contents
 
-## 🔎 | Explore Azure AI Studio Features
+1. [About: Azure AI Studio (preview)](#1-about-azure-ai-studio-preview) 
+1. [Using: Azure AI SDK (Python)](#2-using-azure-ai-sdk-python)
+1. [Quickstart: Build a copilot](#3-quickstart-build-a-copilot)
+1. [Tutorial: Preview in browser](#4-tutorial-preview-in-browser)
+1. [Resources: Keep Learning](#5-resources-keep-learning)
+1. [Contributing](#6-contributing)  
+1. [Trademarks](#7-trademarks)  
 
-This repository contains a copilot quickstart sample that can be used with the [Azure AI Studio preview](https://learn.microsoft.com/azure/ai-studio). Explore these resources to learn more about this supports:
+## 1. About: Azure AI Studio (preview)
 
-* [Azure AI Studio](https://learn.microsoft.com/azure/ai-studio) - build, evaluate & deploy AI solutions from one space.
-* [Azure AI services](https://learn.microsoft.com/azure/ai-services/what-are-ai-services) - AI models & APIs accessible from Azure AI Studio.
-* [Azure AI SDK](https://learn.microsoft.com/azure/ai-studio/how-to/sdk-install) - access to Azure AI services from code (programmatic).
-* [Azure AI CLI](https://learn.microsoft.com/azure/ai-studio/how-to/cli-install) - access to Azure AI services from command-line (shell).
+This repository contains a copilot getting sample that can be used with the the [Azure AI Studio (preview)](https://learn.microsoft.com/azure/ai-studio). Explore these resources to learn more about the tools and services we'll use today.
 
+* [Azure AI SDK](https://learn.microsoft.com/azure/ai-studio/how-to/sdk-install) - access Azure AI Studio resources and generative-ai tools and services,  programmatically from Python code.
+* [Azure AI CLI](https://learn.microsoft.com/azure/ai-studio/how-to/cli-install) -  get cross-platform, language-agnostic access to Azure AI Studio resources, tools and services, from the commandline.
+* [Azure AI services](https://learn.microsoft.com/azure/ai-services/what-are-ai-services) - access a wide range of pre-built and customizable APIs and models, to help build your generative AI apps.
 
-## 👩🏽‍💻 | Build a copilot with your own data
+## 2. Using: Azure AI SDK (Python) 
 
-The sample walks through creating a copilot enterprise chat API that uses custom Python code to ground the copilot responses in your company data and APIs. The sample is meant to provide a starting point that you can further customize to add additional intelligence or capabilities. Following the steps in the [**sample tutorial**](docs/start.md), you will be able to:
- - setup your development environment (pre-built or custom options)
- - create Azure AI resources and project to build the copilot
- - create an Azure Search index containing product information
- - run your copilot with a sample question, and evaluate it
+The sample walks you through creating a copilot enterprise chat API that uses custom Python code to ground the copilot responses in your company data and APIs. The sample is meant to provide a starting point that you can further customize to add additional intelligence or capabilities. 
 
-In the process, you will get familiar with the **Azure AI CLI** for setting up and configuring your copilot from the commandline. And you'll learn to use the **Azure AI SDK** (from Python code or from Jupyter Notebooks) to interact programmatically with your copilot.
+By following our [**step-by-step tutorial**](docs/start.md) you will be able to: 
+ - set up your development environment (pre-built & manual options).
+ - create your Azure AI resources and project.
+ - build an index containing product information. 
+ - run your co-pilot, and validate it with a sample question.
+ - evaluate it, and deploy it on Azure.
+ - invoke the deployed API (endpoint).
+
+In the process, you will get familiar with the features and usage of Azure AI CLI (commandline utility) and Azure AI SDK (Python library) in completing various tasks required in this end-to-end development workflow.
 
 > [!NOTE]  
-> We do not guarantee the quality of responses produced by this sample copilot or its suitability for use in your scenario, and responses will vary as development of this sample is ongoing. You must perform your own validation the outputs of the copilot and its suitability for use within your company.
+> We do not guarantee the quality of responses produced by this sample copilot or its suitability for use in your scenario. Copilot responses will vary as this sample remains under active development. You **must perform your own validation** of the copilot responses to evaluate its suitability for use within your company or application requirements.
+
+## 3. Quickstart: Build a copilot
+
+Ready to get started building the copilot with custom data? 
+
+1. [**Fork this sample**](https://github.com/Azure-Samples/aistudio-python-quickstart-sample/fork) to your own profile on Github. This will give you the flexibility to change the codebase and experiment with your own data later.
+1. [**Open the step-by-step tutorial**](docs/start.md) in your fork. Follow instructions to setup your develpment environment, then keep going.
 
 
-## 🏁 | Get Started
+## 4. Tutorial: Preview in browser
 
-Ready to get started on the tutorial? The quickest way is to use a pre-built development environment. **Click the button below** to open the repo in GitHub Codespaces. Then continue with the README directions.
+This repository is instrumented with a [mkdocs.yml](mkdocs.yml), allowing you to preview the step-by-step guide in your browser. This requires two steps.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/aistudio-python-quickstart-sample?quickstart=1)
+1. Install the required package - ```pip install mkdocs-material```
+1. Run the preview server - ```mkdocs serve```
 
-- [**Start Here**](./docs/start.md) if you want an overview of project and key concepts first.
-- [**Jump Here**](./docs/step-01.md) if just want to get started with the development steps.
+Launch the browser to the URL provided by the preview server. You should see a page similar to the one below. This can provide a better navigation experience and has built-in support for searching the tutorial and toggling light/dark modes.
 
-This tutorial provides a quickstart using the Azure AI SDK from Python, to build a basic copilot application. Want to explore advanced samples using specific frameworks? Try these samples next:
- 1. [Azure AI Studio: Semantic Kernel Quickstart](https://github.com/Azure-Samples/aistudio-python-semantickernel-sample)
- 1. [Azure AI Studio: PromptFlow Quickstart](https://github.com/Azure-Samples/aistudio-python-promptflow-sample)
- 1. [Azure AI Studio: Langchain Quickstart](https://github.com/Azure-Samples/aistudio-python-langchain-sample)
+![Docs Preview](./docs/img/docs-preview.png)
 
 
-## 📚 | Resources
+## 5. Resources: Keep Learning
 
-1. [Azure AI Studio](https://aka.ms/azureaistudio) - UI to explore, build & manage AI solutions.
-1. [Azure AI Studio Docs](https://aka.ms/azureaistudio/docs) - Azure AI Studio documentation.
-1. [Azure AI Services](https://learn.microsoft.com/azure/ai-services/what-are-ai-services) - Azure AI Services documentation.
-1. [Training: Using vector search in Azure Cognitive Search](https://learn.microsoft.com/training/modules/improve-search-results-vector-search) 
-1. [Tutorial: Deploy a web app for chat on your data](https://learn.microsoft.com/azure/ai-studio/tutorials/deploy-chat-web-app) 
+This sample is part of the larger [Azure AI Samples](https://github.com/azure-samples/azureai-samples) collection. Want to build the copilot using a different technology stack? Here's a list of the _standalone_ quickstart samples currently available for Azure AI Studio.
+
+| Copilot Sample | Technology Focus|
+|--------|-------------|
+| [Python Quickstart](https://github.com/Azure-Samples/aistudio-python-quickstart-sample) |[Azure AI SDK For Python](https://learn.microsoft.com/python/api/overview/azure/ai?view=azure-python-preview) (preview) |
+| [Semantic Kernel Quickstart](https://github.com/Azure-Samples/aistudio-python-semantickernel-sample) |  [Semantic Kernel](https://learn.microsoft.com/semantic-kernel/overview/)  |
+| [PromptFlow Quickstart](https://github.com/Azure-Samples/aistudio-python-promptflow-sample) | [Prompt flow](https://microsoft.github.io/promptflow/index.html)  |
+| [Langchain Quickstart](https://github.com/Azure-Samples/aistudio-python-langchain-sample)| [Langchain](https://www.langchain.com/)  |
+| | |
+
+Want to learn more about Azure AI Studio, explore more advanced samples (for end-to-end development) or complete a learning path? Bookmark [this learning collection](https://aka.ms/ai-studio/collection) and explore the resources to continue your learning journey.
 
 
 ## Contributing

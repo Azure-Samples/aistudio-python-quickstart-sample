@@ -1,3 +1,5 @@
+# 06 | Run Your Copilot
+
 ## Step 4: Run the co-pilot with a sample question
 
 > [!NOTE]  

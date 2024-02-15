@@ -1,3 +1,4 @@
+# 04 | Create Azure Resources
 
 ## Step 2: Create and connect to Azure Resources
 

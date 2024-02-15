@@ -1,3 +1,4 @@
+# 07 | Evaluate Your Copilot
 
 ## Step 5: Evaluate your copilot implementation
 

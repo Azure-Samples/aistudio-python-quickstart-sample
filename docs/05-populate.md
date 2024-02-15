@@ -1,3 +1,5 @@
+# 05 | Create Search Index
+
 ## Step 3: Build an Azure Search index
 
 In this step, we'll use the Azure AI CLI to build an Azure Search index for our product data. This index will then be used by our copilot to retrieve relevant information and create an augmented prompt that can be used by the targeted LLM to generate a more relevant response to the user question.
