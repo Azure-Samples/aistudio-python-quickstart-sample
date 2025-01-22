@@ -34,9 +34,13 @@ In the process, you will get familiar with the **Azure AI CLI** for setting up a
 
 ## 🏁 | Get Started
 
-Ready to get started on the tutorial? The quickest way is to use a pre-built development environment. **Click the button below** to open the repo in GitHub Codespaces. Then continue with the README directions.
+Ready to get started on the tutorial? The quickest way is to use a pre-built development environment. **Click the button below** to open the repo in GitHub Codespaces or Codeanywhere. Then continue with the README directions.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/aistudio-python-quickstart-sample?quickstart=1)
+
+
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/Azure-Samples/aistudio-python-quickstart-sample)
+
 
 - [**Start Here**](./docs/start.md) if you want an overview of project and key concepts first.
 - [**Jump Here**](./docs/step-01.md) if just want to get started with the development steps.
