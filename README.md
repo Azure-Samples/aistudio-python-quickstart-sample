@@ -36,7 +36,17 @@ In the process, you will get familiar with the **Azure AI CLI** for setting up a
 
 Ready to get started on the tutorial? The quickest way is to use a pre-built development environment. **Click the button below** to open the repo in GitHub Codespaces. Then continue with the README directions.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/aistudio-python-quickstart-sample?quickstart=1)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/aistudio-python-quickstart-sample?quickstart=1) 
+
+#### 🌏  Open in other Cloud IDEs
+
+Click any of the buttons below to start a new development environment to demo or contribute to the codebase without having to install anything on your machine:
+
+[![Open in Glitch](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)](https://glitch.com/edit/#!/import/github/azure-samples/aistudio-python-quickstart-sample)
+[![Edit in Codesandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/azure-samples/aistudio-python-quickstart-sample)
+[![Open in Repl.it](https://replit.com/badge/github/withastro/astro)](https://replit.com/github/azure-samples/aistudio-python-quickstart-sample)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/azure-samples/aistudio-python-quickstart-sample)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/azure-samples/aistudio-python-quickstart-sample)
 
 - [**Start Here**](./docs/start.md) if you want an overview of project and key concepts first.
 - [**Jump Here**](./docs/step-01.md) if just want to get started with the development steps.
